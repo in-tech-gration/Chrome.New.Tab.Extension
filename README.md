@@ -1,4 +1,7 @@
-# Chrome.New.Tab.Extension
-Browser Extension for quickly accessing common resources on new tab
+## TODO
 
-[Work in progress...]
+- Confirmation on Save
+- Re-order Tasks
+- Add Quickstart tasks
+- Export/Import tasks
+- Add Todo List

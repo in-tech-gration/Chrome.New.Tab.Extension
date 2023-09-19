@@ -1,0 +1,11 @@
+{
+
+  "name"                : "IntechgrationNewTab",
+  "version"             : "0.1.2",
+  "manifest_version"    : 3,
+  "chrome_url_overrides": { "newtab": "index.html" },
+  "options_page": "options.html",
+  "permissions": [
+    "storage"
+  ]
+}

@@ -1,0 +1,98 @@
+* {
+	font-family: 'Roboto', sans-serif;
+}
+html {
+	/* box-shadow: 0 0 200px lightsteelblue inset; */
+}
+
+body {
+
+	background-image: url(../img/teacher.png);
+	background-repeat: no-repeat;
+	background-position: calc( 0% - 120px ) calc( 100% + 60px );
+  background-size: 640px;
+  margin-top: 8rem;
+}
+
+hr {
+	width: 50%;
+	margin-right: auto;
+	margin-left: 0;
+}
+
+h2 {
+
+	font-weight: 600;
+  font-size: 3rem;
+  margin-top: 0;
+
+}
+
+h3 a {
+
+	text-decoration: none;
+	font-weight: 300;
+	color: brown;
+
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.wrapper {
+  max-width: calc( 80ch + 4rem );
+  font-size: 1rem;
+  margin: 1rem auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.wrapper > div {
+  /* border-bottom: 2px solid lightgray; */
+  padding: 0 1rem;
+}
+
+.wrapper div h3 {
+  border-left: 2px solid lightsteelblue;
+  padding-left: 1rem;
+  transition: all 200ms ease;
+}
+
+.wrapper > div h3:hover {
+
+  color: black;
+  border-left: 6px solid lightsteelblue;
+
+}
+
+.wrapper > div h3:hover > a {
+
+  color: black;
+
+}
+
+.ple_light {	
+	font-weight: 300;
+	
+}
+
+.wrapper.options {
+  margin-top: 2rem;
+  border: 1px solid lightsteelblue;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.wrapper.options a {
+  text-decoration: none;
+  color: steelblue;
+}
+
+#options {
+  cursor: pointer;
+}
+#options:hover {
+  color: black;
+}
