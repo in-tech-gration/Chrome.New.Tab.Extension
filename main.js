@@ -38,8 +38,10 @@ document.addEventListener('DOMContentLoaded', function(e){
 
     f.onload = function(){
 
-      const savedResources = JSON.parse(f.result);
+      const resourcesJSON = JSON.parse(f.result);
+      const { savedResources, savedQuickstart } = resourcesJSON;
 
+      // Resources Import
       let output = "";
 
       for ( let i = 0; i < savedResources.length; i+=2 ){
@@ -54,7 +56,27 @@ document.addEventListener('DOMContentLoaded', function(e){
       resources.innerHTML = output;
       
       // Save data to storage locally, in just this browser...
-      chrome.storage.local.set({ "savedResources": f.result }, function () {
+      chrome.storage.local.set({ "savedResources": JSON.stringify(savedResources, null, "\t" ) }, function () {
+        //  Data's been saved boys and girls, go on home
+        console.log("Saved!");
+      });
+
+      // Quickstart Import
+      output = "";
+
+      for ( let i = 0; i < savedQuickstart.length; i+=2 ){
+        output += `
+          <h3>
+            <a target="_blank" href="${savedQuickstart[i+1][1]}">
+              ${savedQuickstart[i][1]}
+            </a>
+          </h3>
+        `
+      }
+      quickstart.innerHTML = output;
+      
+      // Save data to storage locally, in just this browser...
+      chrome.storage.local.set({ "savedQuickstart": JSON.stringify(savedQuickstart, null, "\t") }, function () {
         //  Data's been saved boys and girls, go on home
         console.log("Saved!");
       });
