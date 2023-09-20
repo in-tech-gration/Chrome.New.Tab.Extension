@@ -83,6 +83,7 @@ h3 {
   border: 1px solid lightsteelblue;
   padding: 1rem;
   box-sizing: border-box;
+  justify-content: space-between;
 }
 
 .wrapper.options a {
@@ -90,9 +91,9 @@ h3 {
   color: steelblue;
 }
 
-#options {
+.btn {
   cursor: pointer;
 }
-#options:hover {
-  color: black;
+.btn:hover {
+  color: black !important;
 }

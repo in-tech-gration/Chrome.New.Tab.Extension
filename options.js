@@ -1,27 +1,6 @@
-document.addEventListener('DOMContentLoaded', function (e) {
-
-  const resourcesForm = document.querySelector("#resources section.inputs");
-
-  chrome.storage.local.get(["savedResources"], function (items) {
-
-    if (items && items.savedResources) {
-      const savedResources = JSON.parse(items.savedResources);
-
-      for (let i = 0; i < savedResources.length; i += 2) {
-        const pair = addInputPair(savedResources[i][1], savedResources[i + 1][1]);
-        resourcesForm.appendChild(pair);
-      }
-    }
-  });
-
-});
-
 let pairCounter = 0;
 
-document.querySelector(".add").addEventListener("click", e => {
-})
-
-function addInputPair( labelText, url ){
+function addInputPair(labelText, url) {
 
   const p = document.createElement("p");
 
@@ -30,7 +9,7 @@ function addInputPair( labelText, url ){
   const input = document.createElement("input");
   input.setAttribute("type", "text")
   input.setAttribute("name", `label[${++pairCounter}]`)
-  if ( labelText ){
+  if (labelText) {
     input.setAttribute("value", labelText);
   }
   label.appendChild(input);
@@ -40,8 +19,8 @@ function addInputPair( labelText, url ){
   label2.textContent = " URL: ";
   const input2 = document.createElement("input");
   input2.setAttribute("type", "text")
-  input2.setAttribute("name", `url[${++pairCounter}]`)
-  if ( url ){
+  input2.setAttribute("name", `url[${pairCounter}]`)
+  if (url) {
     input2.setAttribute("value", url);
   }
   label2.appendChild(input2);
@@ -60,8 +39,25 @@ function addInputPair( labelText, url ){
 
 }
 
-document.querySelector("form").addEventListener("click", e => {
+function saveFormDataToLocalStorage(e) {
 
+  e.preventDefault();
+  const formData = new FormData(e.target);
+
+  const resourcesId = "saved" 
+    + e.currentTarget.id[0].toUpperCase() 
+    + e.currentTarget.id.slice(1);
+
+   // Save data to storage locally, in just this browser...
+  chrome.storage.local.set({
+    [resourcesId]: JSON.stringify([...formData])
+  }, function () {
+    //  Data's been saved boys and girls, go on home
+  });
+
+}
+
+function handleAddAndRemove(e) {
   if (e.target.nodeName === "BUTTON") {
 
     if (e.target.classList.contains("remove")) {
@@ -78,18 +74,49 @@ document.querySelector("form").addEventListener("click", e => {
     }
 
   }
+}
 
-})
+// ACTION!
 
-document.querySelector("form").addEventListener('submit', function (e) {
-  e.preventDefault();
-  const formData = new FormData(e.target);
+document.addEventListener('DOMContentLoaded', function (e) {
 
-  // Save data to storage locally, in just this browser...
-  chrome.storage.local.set({
-    "savedResources": JSON.stringify([...formData])
-  }, function () {
-    //  Data's been saved boys and girls, go on home
+  const resourcesForm = document.querySelector("#resources section.inputs");
+  const quickstartForm = document.querySelector("#quickstart section.inputs");
+
+  chrome.storage.local.get(["savedResources"], function (items) {
+
+    if (items && items.savedResources) {
+      const savedResources = JSON.parse(items.savedResources);
+
+      for (let i = 0; i < savedResources.length; i += 2) {
+        const pair = addInputPair(savedResources[i][1], savedResources[i + 1][1]);
+        resourcesForm.appendChild(pair);
+      }
+    }
+  });
+
+  chrome.storage.local.get(["savedQuickstart"], function (items) {
+
+    if (items && items.savedQuickstart) {
+      const savedQuickstart = JSON.parse(items.savedQuickstart);
+
+      for (let i = 0; i < savedQuickstart.length; i += 2) {
+        const pair = addInputPair(savedQuickstart[i][1], savedQuickstart[i + 1][1]);
+        quickstartForm.appendChild(pair);
+      }
+    }
   });
 
 });
+
+document.querySelector("form#quickstart")
+.addEventListener("click", handleAddAndRemove);
+
+document.querySelector("form#resources")
+.addEventListener("click", handleAddAndRemove);
+
+document.querySelector("form#quickstart")
+.addEventListener('submit', saveFormDataToLocalStorage);
+
+document.querySelector("form#resources")
+.addEventListener('submit', saveFormDataToLocalStorage);
