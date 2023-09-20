@@ -9,3 +9,6 @@
 - Inform for unsaved tasks
 - Inform when a resources is deleted but not saved
 - Add Dark/Light Theme toggler
+- Automatically remove from saved links the ones that have empty label/url values
+- On updates, inform to take a backup
+- Validate non-https URLs passed as options
