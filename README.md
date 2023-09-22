@@ -12,3 +12,4 @@
 - Automatically remove from saved links the ones that have empty label/url values
 - On updates, inform to take a backup
 - Validate non-https URLs passed as options
+- Add custom styling for entries (color, bgcolor, font-size bold, fa icon, etc.)
