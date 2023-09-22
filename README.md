@@ -1,3 +1,13 @@
+**IMPORANT NOTICE:** This extension is still in `beta`.
+
+## Installation
+
+1. Download the repo contents
+2. On Chrome, go to `Extensions > Manage Extensions`
+3. Click on `Load Unpacked` and select the downloaded folder 
+
+![](./assets/load.unpacked.jpg)
+
 ## TODO
 
 - ~~Add Quickstart tasks~~
