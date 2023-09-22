@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. [Download](https://github.com/in-tech-gration/Chrome.New.Tab.Extension/archive/refs/heads/main.zip) the repo contents
+1. [Download](https://github.com/in-tech-gration/Chrome.New.Tab.Extension/archive/refs/heads/main.zip) and unzip the repo
 2. On Chrome, go to `Extensions > Manage Extensions`
 3. Click on `Load Unpacked` and select the downloaded folder 
 
