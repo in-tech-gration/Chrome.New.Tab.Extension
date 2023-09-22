@@ -23,3 +23,7 @@
 - On updates, inform to take a backup
 - Validate non-https URLs passed as options
 - Add custom styling for entries (color, bgcolor, font-size bold, fa icon, etc.)
+- Test the ability to add quicklinks to commands like, Clear History, etc.
+
+
+
