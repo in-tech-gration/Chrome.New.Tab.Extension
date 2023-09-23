@@ -1,5 +1,7 @@
 **IMPORANT NOTICE:** This extension is still in `beta`.
 
+![](./assets/NewTab.jpg)
+
 ## Installation
 
 1. [Download](https://github.com/in-tech-gration/Chrome.New.Tab.Extension/archive/refs/heads/main.zip) and unzip the repo
