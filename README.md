@@ -1,4 +1,4 @@
-**IMPORANT NOTICE:** This extension is still in `beta`.
+**IMPORANT NOTICE:** This extension is still in `beta`. We'd love your feedback, so feel free to give this extension a shot.
 
 ![](./assets/NewTab.jpg)
 
