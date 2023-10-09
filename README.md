@@ -13,3 +13,5 @@
 - On updates, inform to take a backup
 - Validate non-https URLs passed as options
 - Add custom styling for entries (color, bgcolor, font-size bold, fa icon, etc.)
+- Ability to rename the `Quickstart` and `Resources` headings
+- Ability to save a quick link with option to open in the same tab or new tab
